@@ -35,12 +35,12 @@ jobs:
     - name: Run migrations
       run: cd decide;python manage.py migrate
     - name: Run tests
-      run: cd decide;coverage run --branch --source=. ./manage.py test --keepdb --with-xunit; coverage xml; ls ..; ls .
+      run: cd decide;coverage run --branch --source=. ./manage.py test --keepdb --with-xunit; coverage xml; 
     - name: Codacy Coverage Reporter
       uses: codacy/codacy-coverage-reporter-action@v1.1.0
       with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           # or
           # api-token: ${{ secrets.CODACY_API_TOKEN }}
-          coverage-reports: coverage.xml
+          coverage-reports: decide/coverage.xml
 
