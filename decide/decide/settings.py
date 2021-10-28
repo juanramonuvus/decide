@@ -192,5 +192,11 @@ if os.path.exists("config.jsonnet"):
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
 
+NOSE_ARGS = [
+    '--with-xunit',
+    '--with-coverage',
+    '--cover-xml',
+    '--cover-xml-file=nosecover.xml',
+]
 import django_heroku
 django_heroku.settings(locals())
