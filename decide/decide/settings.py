@@ -194,7 +194,7 @@ INSTALLED_APPS = INSTALLED_APPS + MODULES
 
 NOSE_ARGS = [
     '--with-xunit',
-#    '--with-coverage',
+    '--keepdb',
 #    '--cover-xml',
 #    '--cover-xml-file=nosecover.xml',
 ]
