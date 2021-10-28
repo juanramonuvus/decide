@@ -41,6 +41,14 @@ jobs:
       with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: decide/coverage.xml
+    - name: Prepare for docker deployment
+      run: |
+        pip install gunicorn
+        pip install django-heroku
+        cat "import django_heroku" >> decide/decide/settings.py
+        cat "APIS={}" >> decide/decide/settings.py
+        cat "django_heroku.settings(locals())" >> decide/decide/settings.py
+  
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
