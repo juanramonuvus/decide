@@ -40,15 +40,7 @@ jobs:
       uses: codacy/codacy-coverage-reporter-action@v1.1.0
       with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: decide/coverage.xml
-    - name: Prepare for heroku deployment
-      run: |
-        echo "pip install gunicorn" >> requirements.txt
-        echo "pip install django-heroku"  >> requirements.txt
-        echo "import django_heroku" >> decide/decide/settings.py
-        echo "APIS={}" >> decide/decide/settings.py
-        echo "django_heroku.settings(locals())" >> decide/decide/settings.py
-  
+          coverage-reports: decide/coverage.xml  
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
