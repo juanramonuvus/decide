@@ -199,4 +199,4 @@ NOSE_ARGS = [
     '--cover-xml-file=nosecover.xml',
 ]
 import django_heroku
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
