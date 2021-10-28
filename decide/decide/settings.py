@@ -190,6 +190,7 @@ if os.path.exists("config.jsonnet"):
     for k, v in config.items():
         vars()[k] = v
 
+APIS = {}
 django_heroku.settings(locals())
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
