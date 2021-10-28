@@ -191,6 +191,6 @@ if os.path.exists("config.jsonnet"):
         vars()[k] = v
 
 APIS = {}
-django_heroku.settings(locals())
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
+django_heroku.settings(locals())
